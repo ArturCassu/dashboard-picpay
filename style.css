@@ -157,7 +157,6 @@ ul li {
     height: 18px;
     margin-left: 5%;
     border: #05271b solid 1.5px;
-    transition: width 15s;
 }
 
 .label_off {
@@ -201,24 +200,6 @@ h1 {
     width:19.3%;
 }
 
-
-.pop_up{
-    visibility: hidden;
-    position: absolute;
-    text-align: center;
-    width: 300px;
-    height: 300px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    transform: scale(0.1);
-}
-
-.open_pop_up{
-    transform: scale(1);
-    visibility: visible;
-    background-color: aquamarine;
-}
-
 .animation{
     animation: transition 15s linear;
 }
@@ -233,4 +214,20 @@ h1 {
 @keyframes transition2{
     from {width: 19.3%;}
     to {width:0;}
+}
+
+.position{
+    position: relative;
+}
+.hover_card{
+    visibility: hidden;
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-color: #05271b;
+    z-index: 10;
+}
+
+.hover{
+
 }

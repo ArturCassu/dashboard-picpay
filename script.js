@@ -70,7 +70,6 @@ const run = async () => {
             bars[key].push('<div id="status_bar_'+status+'" class="animation"></div>')
             
             if (bars[key].length > 5){
-                console.log(bars[key][0][20]);
                 if (bars[key][0][20]=="t"){
                     bars[key][0] = '<div id="status_bar_true" class="animation2"></div>'
                 }else{
@@ -102,6 +101,5 @@ const run = async () => {
 
 window.onload = run()
 
-
-
+//POP UP
 
