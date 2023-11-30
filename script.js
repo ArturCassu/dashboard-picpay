@@ -81,7 +81,7 @@ const run = async () => {
 
             bars[key].reverse()
         })
-        await delay(15000);
+        await delay(15100);
         Object.keys(res).forEach(key =>{
             if (bars[key].length > 5){
                 bars[key].shift()
