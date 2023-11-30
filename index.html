@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="script.js" defer></script>
     <title>Service Status</title>
 </head>
+
 <body>
     <div id="ball1"></div>
     <div id="ball2"></div>
@@ -15,7 +17,7 @@
     <div id="ball5"></div>
 
     <header>
-        <img src="logo.png" alt="Logo PicPay and logo Banco Original" id="img_logo">    
+        <img src="logo.png" alt="Logo PicPay and logo Banco Original" id="img_logo">
         <h1>Tool Observability Dashboard</h1>
     </header>
     <main>
@@ -25,6 +27,7 @@
                 <p class="status">Status</p>
                 <img src="information.png" alt="information about past incidents" class="img_i">
             </div>
+            <div class="pop_up"></div>
             <div id="status_block_aws" class="status_block"></div>
             <ul class="timer">
                 <li>60s</li>
@@ -50,6 +53,8 @@
                 <p class="status">Status</p>
                 <img src="information.png" alt="information about past incidents" class="img_i">
             </div>
+            <div class="pop_up"></div>
+
             <div id="status_block_oci" class="status_block"></div>
             <ul class="timer">
                 <li>60s</li>
@@ -73,8 +78,9 @@
             <h2>Jira</h2>
             <div class="div_status_i">
                 <p class="status">Status</p>
-                <img src="information.png" alt="information about past incidents" class="img_i">
+                <img src="information.png" alt="information about past incidents" class="img_i" onclick="close()">
             </div>
+            <div class="pop_up"></div>
             <div id="status_block_jira" class="status_block"></div>
             <ul class="timer">
                 <li>60s</li>
@@ -95,5 +101,15 @@
             </ul>
         </article>
     </main>
+    <script>
+        let pop_up = document.getElementsByClassName("pop_up");
+        function open(){
+            pop_up.classList.add("open_pop_up");
+        }
+        function close(){
+            pop_up.classList.remove("open_pop_up");
+        }
+    </script>
 </body>
+
 </html>
