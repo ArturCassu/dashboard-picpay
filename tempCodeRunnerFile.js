@@ -1,0 +1,1 @@
+const { resultados } = require("./consumirAPI")

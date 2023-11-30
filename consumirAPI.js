@@ -39,11 +39,11 @@ let jira = async () => {
 
 }
 
-let resultados = async()=>{
-    console.log(await oci())
-    console.log(await jira())
+const resultados = async()=>{
+    return{
+        "oci": (await oci()),
+        "jira":(await jira())
+    }
 }
-
-resultados()
 
 
