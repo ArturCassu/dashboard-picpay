@@ -15,8 +15,8 @@ let oci = async () => {
         element['serviceHealthReports'].forEach(element2 =>{
             if (element2['serviceStatus'] != 'NormalPerformance') {
                 listaRuins.push({
-                    "regiao": element["regionName"],
-                    "servico": element2["serviceName"],
+                    "region": element["regionName"],
+                    "service": element2["serviceName"],
                     "status":element2['serviceStatus']
                     })
             }
@@ -61,7 +61,7 @@ const run = async () => {
                 document.getElementById("status_block_"+key).innerHTML += '<div class="status_bar_true"></div>'
             }
         })
-        await delay(1500);
+        await delay(15000);
     }
 };
 

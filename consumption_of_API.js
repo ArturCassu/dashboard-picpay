@@ -15,8 +15,8 @@ let oci = async () => {
         element['serviceHealthReports'].forEach(element2 =>{
             if (element2['serviceStatus'] != 'NormalPerformance') {
                 listaRuins.push({
-                    "regiao": element["regionName"],
-                    "servico": element2["serviceName"],
+                    "region": element["regionName"],
+                    "service": element2["serviceName"],
                     "status":element2['serviceStatus']
                     })
             }
@@ -39,7 +39,7 @@ let jira = async () => {
 
 }
 
-const resultados = async()=>{
+const result = async()=>{
     return{
         "oci": (await oci()),
         "jira":(await jira())
