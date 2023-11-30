@@ -50,18 +50,22 @@ const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-const request = async () => {
-    res = (await resultados())
-    Object.keys(res).forEach(key =>{
-        if (res[key].length > -1){
-            console.log("OI");
-            document.getElementById("status_block_"+key).innerHTML = "<p>oi</p>"
-        }
-    })
-    await delay(15000);
+const run = async () => {
+    while (true){
+        let res = (await resultados())
+        Object.keys(res).forEach(key =>{
+            if (res[key].length > 0){
+                document.getElementById("status_block_"+key).innerHTML += '<div id="status_bar_false"></div>'
+            }
+            else{
+                document.getElementById("status_block_"+key).innerHTML += '<div id="status_bar_true"></div>'
+            }
+        })
+        await delay(15000);
+    }
 };
 
-request()
+window.onload = run()
 
 
 
