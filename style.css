@@ -128,10 +128,9 @@ h3 {
     display: flex;
     justify-content: space-around;
     margin: 0;
-    margin-right: 12%;
-    margin-left: 12%;
+    margin-right: 15.5%;
+    margin-left: 15.5%;
     padding: 0px;
-
 }
 
 ul li {
@@ -158,6 +157,7 @@ ul li {
     height: 18px;
     margin-left: 5%;
     border: #05271b solid 1.5px;
+    transition: width 15s;
 }
 
 .label_off {
@@ -167,6 +167,7 @@ ul li {
     margin-left: 5%;
     border: #05271b solid 1.5px;
 }
+
 
 
 
@@ -186,17 +187,32 @@ h1 {
     z-index: 1;
 }
 
-.status_bar_true {
-    height: 99.1%;
-    width: 19.3%;
+#status_bar_true {
+    height: 99.2%;
     background-color: #11c76f;
     border: 0.5px solid #05271b;
+    width:19.3%;
 }
 
-.status_bar_false {
-    height: 99.1%;
-    width: 19.3%;
+#status_bar_false {
+    height: 99.2%;
     background-color: #fcdf8b;
     border: 0.5px solid #05271b;
+    width:19.3%;
+}
 
+.animation{
+    animation: transition 15s linear;
+}
+.animation2{
+    animation: transition2 15s linear;
+}
+
+@keyframes transition{
+    from {width: 0;}
+    to {width:19.3%;}
+}
+@keyframes transition2{
+    from {width: 19.3%;}
+    to {width:0;}
 }
