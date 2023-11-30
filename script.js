@@ -1,22 +1,22 @@
-const { Pool } = require('pg');
+// const { Pool } = require('pg');
  
-const pool = new Pool({   
-    user: 'ccvtcvkc', 
-    host: 'silly.db.elephantsql.com',
-    database: 'ccvtcvkc',   
-    password: 'EvPqnJX-xEzrEHe66GTjaIdPLhakxz3I',   
-    port: 5432,
-    ssl: true
-})
+// const pool = new Pool({   
+//     user: 'ccvtcvkc', 
+//     host: 'silly.db.elephantsql.com',
+//     database: 'ccvtcvkc',   
+//     password: 'EvPqnJX-xEzrEHe66GTjaIdPLhakxz3I',   
+//     port: 5432,
+//     ssl: true
+// })
 
-// pool.query(`insert into historico(nome_da_empresa, descricao_erro, regiao, tempo_do_erro) values (${nome_da_empresa}, ${descricao_erro}, ${regiao}, ${tempo_do_erro})`)
-const fetchData = async (name_company, descricao_erro, region) =>{
-    res = await pool.query(
-        `INSERT INTO historico(name_company, error_description, region, error_time) VALUES ($1, $2, $3, current_timestamp)`,
-        [name_company, descricao_erro, region]
-      );    
-    console.log(res);
-}
+// // pool.query(`insert into historico(nome_da_empresa, descricao_erro, regiao, tempo_do_erro) values (${nome_da_empresa}, ${descricao_erro}, ${regiao}, ${tempo_do_erro})`)
+// const fetchData = async (name_company, descricao_erro, region) =>{
+//     res = await pool.query(
+//         `INSERT INTO historico(name_company, error_description, region, error_time) VALUES ($1, $2, $3, current_timestamp)`,
+//         [name_company, descricao_erro, region]
+//       );    
+//     console.log(res);
+// }
 
 let oci = async () => {
     let list = []
@@ -135,13 +135,13 @@ window.onload = run()
 
 //POP UP
 
-function abrirModal(){
-    const modal = document.getElementById('janela-modal')
-    modal.classList.add('abrir')
+function openModal(){
+    const modal = document.getElementById('modal-window')
+    modal.classList.add('open')
 
     modal.addEventListener('click',(e) =>{
-            if(e.target.id == 'fechar' || e.target.id == 'janela-modal'){
-                modal.classList.remove('abrir')
+            if(e.target.id == 'close' || e.target.id == 'modal-window'){
+                modal.classList.remove('open')
             }
 })
 }
