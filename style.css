@@ -104,12 +104,14 @@ h1 {
     height: 30vh;
     width: 5vh;
     background-color: #11c76f;
+    display: flex;
     flex-direction: row;
 }
 .status_bar_false{
     height: 30vh;
     width: 5vh;
     background-color: #fcdf8b;
+    display: flex;
     flex-direction: row;
 
 }
