@@ -61,7 +61,7 @@ const run = async () => {
                 document.getElementById("status_block_"+key).innerHTML += '<div class="status_bar_true"></div>'
             }
         })
-        await delay(15000);
+        await delay(1500);
     }
 };
 
