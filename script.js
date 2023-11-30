@@ -55,10 +55,10 @@ const run = async () => {
         let res = (await resultados())
         Object.keys(res).forEach(key =>{
             if (res[key].length > 0){
-                document.getElementById("status_block_"+key).innerHTML += '<div id="status_bar_false"></div>'
+                document.getElementById("status_block_"+key).innerHTML += '<div class="status_bar_false"></div>'
             }
             else{
-                document.getElementById("status_block_"+key).innerHTML += '<div id="status_bar_true"></div>'
+                document.getElementById("status_block_"+key).innerHTML += '<div class="status_bar_true"></div>'
             }
         })
         await delay(15000);
