@@ -1,3 +1,23 @@
+const { Pool } = require('pg');
+ 
+const pool = new Pool({   
+    user: 'ccvtcvkc', 
+    host: 'silly.db.elephantsql.com',
+    database: 'ccvtcvkc',   
+    password: 'EvPqnJX-xEzrEHe66GTjaIdPLhakxz3I',   
+    port: 5432,
+    ssl: true
+})
+
+// pool.query(`insert into historico(nome_da_empresa, descricao_erro, regiao, tempo_do_erro) values (${nome_da_empresa}, ${descricao_erro}, ${regiao}, ${tempo_do_erro})`)
+const fetchData = async (name_company, descricao_erro, region) =>{
+    res = await pool.query(
+        `INSERT INTO historico(name_company, error_description, region, error_time) VALUES ($1, $2, $3, current_timestamp)`,
+        [name_company, descricao_erro, region]
+      );    
+    console.log(res);
+}
+
 let oci = async () => {
     let list = []
     let failedServers = []
@@ -63,6 +83,18 @@ const run = async () => {
             let status
             if (res[key].length > 0){
                 status = "false"
+                if (key == "aws"){
+                    fetchData(name_company, descricao_erro, region)
+                }
+                if (key == "oci"){
+                    res[key].forEach(erros =>{
+                        fetchData("oci", erros["service"], erros["region"])
+                    })
+                }
+                if (key == "jira"){
+                    fetchData("jira", res[key], "undefined")
+                }
+
             }
             else{
                 status = "true"
