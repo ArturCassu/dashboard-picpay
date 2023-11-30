@@ -75,7 +75,7 @@ body {
     padding: 0;
     margin: 0;
     margin-left: 100px;
-    margin-right: 50px;
+    margin-right: 20px;
     margin-bottom: 10px;
     font-weight: 400;
 
@@ -227,7 +227,57 @@ h1 {
     background-color: #05271b;
     z-index: 10;
 }
+.btn{
+    margin: 13px;
+    display: inline;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+   
+}
 
-.hover{
 
+.janela-modal{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal{
+    width: 60%;
+    min-width: 450px;
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.61);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+
+}
+
+.fechar{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.janela-modal.abrir{
+    display: flex;
 }
